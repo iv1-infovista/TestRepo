@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author erich
+ *
+ */
+module TestHello {
+}
