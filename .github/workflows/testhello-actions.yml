@@ -16,3 +16,7 @@ jobs:
           architecture: x64
       - name: Build with Ant
         run: ant -noinput -buildfile scripts/build.xml -Dbasedir=.
+      - uses: actions/upload-artifact@v2
+        with:
+	      name: WebApp
+	      path: TestHello.war
