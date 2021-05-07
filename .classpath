@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="classes"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="classes"/>
+	<classpathentry kind="lib" path="third-parties/gwt-dev.jar"/>
+	<classpathentry kind="lib" path="third-parties/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="third-parties/gwt-servlet-deps.jar"/>
+	<classpathentry kind="lib" path="third-parties/gwt-user.jar"/>
+	<classpathentry kind="lib" path="third-parties/requestfactory-client.jar"/>
+	<classpathentry kind="lib" path="third-parties/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="third-parties/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry kind="lib" path="third-parties/requestfactory-server.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,2 +1,4 @@
 /bin/
 /build/
+/war/
+/gwt-unitCache/
