@@ -30,7 +30,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: my-docker-hub-namespace/my-docker-hub-repository
+          repository: iv1infovista/testwgt
           tag_with_ref: true
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
