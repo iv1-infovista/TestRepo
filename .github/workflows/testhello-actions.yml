@@ -1,6 +1,9 @@
 name: Java CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'master'
 
 jobs:
   build:
@@ -20,3 +23,18 @@ jobs:
         with:
           name: WebApp
           path: TestHello.war
+      - name: Build docker
+        run: docker build . -t iv1infovista/testgwt/version1.0
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+         push: true
+         tags: iv1infovista/testgwt/version1.0
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
