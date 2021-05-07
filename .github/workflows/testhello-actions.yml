@@ -15,4 +15,4 @@ jobs:
           distribution: 'adopt'
           architecture: x64
       - name: Build with Ant
-        run: ant -noinput -buildfile scripts/build.xml .
+        run: ant -noinput -buildfile scripts/build.xml -Dbasedir=.
