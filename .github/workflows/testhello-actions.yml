@@ -35,4 +35,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: iv1infovista/testgwt/version1.0.001
+          tags: iv1infovista/testgwt:version1.0.001
