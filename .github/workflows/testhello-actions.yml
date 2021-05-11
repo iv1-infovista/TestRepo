@@ -22,7 +22,7 @@ jobs:
           echo "CURRENT_BUILD_NUMBER=$(git tag| head -1)" >> $GITHUB_ENV
       - name: Build with Ant
         run: |
-          echo currentbuildnumber = ${{ CURRENT_BUILD_NUMBER }} $CURRENT_BUILD_NUMBER
+          echo currentbuildnumber $CURRENT_BUILD_NUMBER
           ant -noinput -buildfile scripts/build.xml -DBUILD_NUMBER=${{ CURRENT_BUILD_NUMBER }} -Dbasedir=.
         shell: bash
       - uses: actions/upload-artifact@v2
