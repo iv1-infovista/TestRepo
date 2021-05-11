@@ -19,6 +19,7 @@ jobs:
           architecture: x64
       - name: Build with Ant
         run: |
+          git tag -l
           ant -noinput -buildfile scripts/build.xml -Dbasedir=.
         shell: bash
       - uses: actions/upload-artifact@v2
