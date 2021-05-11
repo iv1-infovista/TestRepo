@@ -17,13 +17,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           architecture: x64
-      - name: Set environment variables
-        run: |
-          echo "CURRENT_BUILD_NUMBER=$(git tag| head -1)" >> $GITHUB_ENV
       - name: Build with Ant
         run: |
-          echo $CURRENT_BUILD_NUMBER
-          ant -noinput -buildfile scripts/build.xml -DBUILD_NUMBER=${{ CURRENT_BUILD_NUMBER }} -Dbasedir=.
+          ant -noinput -buildfile scripts/build.xml -Dbasedir=.
         shell: bash
       - uses: actions/upload-artifact@v2
         with:
