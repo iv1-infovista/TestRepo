@@ -17,8 +17,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           architecture: x64
-      - name: set build number
-        run: echo "CURRENT_BUILD_NUMBER=$(echo $(git tag| head -1) + 1 | bc)" >> $GITHUB_ENV
+      - run: echo "CURRENT_BUILD_NUMBER=$(echo $(git tag| head -1) + 1 | bc)" >> $GITHUB_ENV    
       - name: Build with Ant
         run: |
           echo currentbuildnumber = ${{ CURRENT_BUILD_NUMBER }}
