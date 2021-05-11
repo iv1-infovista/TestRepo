@@ -19,8 +19,11 @@ jobs:
           architecture: x64
       - name: Build with Ant
         run: |
-          git tag -l
-          ant -noinput -buildfile scripts/build.xml -Dbasedir=.
+          currentbuildnumber=`git tag| head -1` 
+          let "currentbuildnumber++" 
+          git tag $currentbuildnumber
+          echo currentbuildnumber = $currentbuildnumber
+          ant -noinput -buildfile scripts/build.xml -DBUILD_NUMBER=$currentbuildnumber -Dbasedir=.
         shell: bash
       - uses: actions/upload-artifact@v2
         with:
