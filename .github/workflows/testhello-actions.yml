@@ -19,7 +19,7 @@ jobs:
           architecture: x64
       - name: Build with Ant
         run: |
-          currentbuildnumber=`git tag| head -1` 
+          currentbuildnumber=$(git tag| head -1) 
           let "currentbuildnumber++" 
           git tag $currentbuildnumber
           echo currentbuildnumber = $currentbuildnumber
