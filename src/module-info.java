@@ -6,4 +6,5 @@
  *
  */
 module TestHello {
+	requires gwt.servlet;
 }
