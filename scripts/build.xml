@@ -82,6 +82,7 @@
         <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
+            	<attribute name="build" value="${VERSION}"/>
             </manifest>
         </jar>
     </target>
@@ -91,7 +92,7 @@
     </target>
     
     <target name="run" depends="war">
-        <echo message="starting run"/>
+        <echo message="starting run for build ${VERSION}"/>
         <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
     </target>
     
